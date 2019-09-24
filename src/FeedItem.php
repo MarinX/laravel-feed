@@ -38,6 +38,9 @@ class FeedItem
     /** @var string */
     protected $category;
 
+    /** @var \Carbon\Carbon */
+    protected $pubDate;
+
     public function __construct(array $data = [])
     {
         foreach ($data as $key => $value) {
@@ -116,6 +119,13 @@ class FeedItem
     public function category(string $category)
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function pubDate(Carbon $pubDate)
+    {
+        $this->pubDate = $pubDate;
 
         return $this;
     }

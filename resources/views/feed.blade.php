@@ -30,6 +30,9 @@
                 <![CDATA[{!! $item->category ?? '' !!}]]>
             </category>
             <updated>{{ $item->updated->toRssString() }}</updated>
+            @if($item->__isset('pubDate'))
+            <pubdate>{{ $item->pubDate->toRfc822String() }}</pubdate>
+            @endif
         </entry>
     @endforeach
 </feed>
